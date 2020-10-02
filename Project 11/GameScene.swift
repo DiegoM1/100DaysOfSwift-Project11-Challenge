@@ -113,6 +113,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate{
                     ball.position = location
                     ball.physicsBody?.contactTestBitMask = ball.physicsBody?.collisionBitMask ?? 0
                     ball.name = "ball"
+                    counter -= 1
                     addChild(ball)
                 }
             }
@@ -162,7 +163,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate{
         } else if object.name == "bad" {
             destroy(ball: ball)
             score -= 1
-            counter -= 1
         } else if object.name == "box" {
             destroy(ball: object)
         }
